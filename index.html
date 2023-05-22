@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>EAN FINDER</title>
+    <link rel="icon" href="./start.png">
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+      }
+      .form__container {
+        width: 40%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border-right: 2px solid gray;
+      }
+      #submit-button {
+        width: 80%;
+        height: 50px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: none;
+        box-shadow: 1.5px 1.5px 3px -1px;
+        background-color: rgb(53, 190, 231);
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 17px;
+      }
+      #submit-button:active {
+        box-shadow: 0px 0px 0px 0px;
+        background-color: rgb(31, 143, 177);
+      }
+      .form__container form {
+        width: 80%;
+        border: 1px dashed black;
+        margin-top: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .form__container form textarea {
+        width: calc(100% - 9px);
+        height: 280px;
+        resize: none;
+        margin-top: 10px;
+        padding-left: 5px;
+        border: none;
+      }
+      .form__container form textarea:focus {
+        outline: none;
+      }
+      #paste-button {
+        width: 70%;
+        height: 25px;
+        margin: 15px 0;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 1.5px 1.5px 3px -1px;
+        background-color: rgb(194, 193, 193);
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+      #paste-button:active {
+        box-shadow: 0px 0px 0px 0px;
+        background-color: rgb(170, 168, 168);
+      }
+      #copy-button {
+        width: 90%;
+        height: 35px;
+        margin: 25px 0;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 1.5px 1.5px 3px -1px;
+        background-color: rgb(194, 193, 193);
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+      #copy-button:active {
+        box-shadow: 0px 0px 0px 0px;
+        background-color: rgb(170, 168, 168);
+      }
+      .table__container {
+        width: 60%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .table__container table {
+        width: 90%;
+        height: 40px;
+        margin-top: 20px;
+      }
+      .table__container table tr th {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        text-transform: uppercase;
+        font-size: 18px;
+        color: rgb(77, 77, 77);
+      }
+      .table__overflow {
+        width: 90%;
+        height: 400px;
+        overflow-y: scroll;
+        scrollbar-color: transparent transparent;
+        scrollbar-width: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .table__overflow::-webkit-scrollbar {
+        display: none;
+      }
+      .table__overflow table {
+        width: 100%;
+        margin-top: 0px !important;
+      }
+      .table__overflow table tr td {
+        height: 25px;
+        border-bottom: 1px solid gray;
+        text-align: center;
+      }
+      #task-result {
+        text-transform: capitalize;
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 22px;
+      }
+      #spinner {
+        width: 70%;
+        height: auto;
+        margin-top: 90px;
+        display: none;
+      }
+      #start {
+        width: 45%;
+        height: auto;
+        margin-top: 105px;
+        opacity: .3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form__container">
+      <form id="task-form">
+        <textarea id="task-codes" placeholder="Ingresar códigos"></textarea>
+        <button id="paste-button">pegar</button>
+      </form>
+      <button id="submit-button">buscar</button>
+      <p id="task-result">( ... )</p>
+    </div>
+    <div class="table__container">
+      <table>
+        <tr>
+          <th style="width: 64.5%">código</th>
+          <th style="width: 35.5%">precio</th>
+        </tr>
+      </table>
+      <div class="table__overflow">
+        <table id="task-table"></table>
+        <img id="spinner" src="./progress.gif" alt="cargando">
+        <img id="start" src="./start.png" alt="inicio">
+      </div>
+      <button id="copy-button">copiar</button>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
