@@ -17,15 +17,15 @@ To provide users with a glimpse of the EAN Finder interface, it is recommended t
 
 1. **Main Application**: Showcase the main interface of EAN Finder, highlighting the input field for entering EAN codes and the search functionality.
 
-![EAN Finder Logo](https://raw.githubusercontent.com/santraez/eanfinder/main/assets/init.png)
+![EAN Finder Logo](https://raw.githubusercontent.com/santraez/ean-finder/main/assets/init.png)
 
 2. **Search Results**: Display a screenshot demonstrating the search results page, where users can view the product information and corresponding prices extracted from Amazon.
 
-![EAN Finder Search](https://raw.githubusercontent.com/santraez/eanfinder/main/assets/paste.png)
+![EAN Finder Search](https://raw.githubusercontent.com/santraez/ean-finder/main/assets/paste.png)
 
 3. **Product Details**: Include a screenshot that showcases detailed information about a specific product, including its title, description, and price.
 
-![EAN Finder Results](https://raw.githubusercontent.com/santraez/eanfinder/main/assets/result.png)
+![EAN Finder Results](https://raw.githubusercontent.com/santraez/ean-finder/main/assets/result.png)
 
 4. **Error Handling**: Capture an image that demonstrates the application's error handling, such as displaying a message when an invalid EAN code is entered or when there is a failure in retrieving data from Amazon.
 
@@ -42,7 +42,7 @@ EAN Finder has been developed using the following technologies:
 
 To install and run EAN Finder on your system, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/santraez/eanfinder`
+1. Clone this repository: `git clone https://github.com/santraez/ean-finder`
 2. Navigate to the project directory: `cd ean-finder`
 3. Install the dependencies: `npm install`
 4. Start the application: `npm make`
@@ -65,4 +65,4 @@ Contributions to EAN Finder are welcome! If you would like to contribute, please
 
 ## License
 
-This project is licensed under the MIT License. For more information, please refer to the [LICENSE](https://github.com/santraez/eanfinder/blob/main/LICENSE) file.
+This project is licensed under the MIT License. For more information, please refer to the [LICENSE](https://github.com/santraez/ean-finder/blob/main/LICENSE) file.
